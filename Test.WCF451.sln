@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.WCF451.AdHoc", "Test.WCF451\Test.WCF451.AdHoc.csproj", "{5826DEAC-DD6D-4FC3-9FCA-30A22E952BCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.WCF.Common.AdHoc", "Test.WCF.Common\Test.WCF.Common.AdHoc.csproj", "{107DA402-1E5D-48EE-BC05-EFD4BC3D4161}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.WCF.FullTrust.AdHoc", "Test.WCF.FullTrust\Test.WCF.FullTrust.AdHoc.csproj", "{0BCD9861-3E70-40EF-BA13-C301899D968D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{90853137-BEA9-4D90-94BE-CFBD441E4FD8}"
+	ProjectSection(SolutionItems) = preProject
+		Test.WCF451.testsettings = Test.WCF451.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5826DEAC-DD6D-4FC3-9FCA-30A22E952BCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5826DEAC-DD6D-4FC3-9FCA-30A22E952BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5826DEAC-DD6D-4FC3-9FCA-30A22E952BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5826DEAC-DD6D-4FC3-9FCA-30A22E952BCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{107DA402-1E5D-48EE-BC05-EFD4BC3D4161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{107DA402-1E5D-48EE-BC05-EFD4BC3D4161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{107DA402-1E5D-48EE-BC05-EFD4BC3D4161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{107DA402-1E5D-48EE-BC05-EFD4BC3D4161}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BCD9861-3E70-40EF-BA13-C301899D968D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BCD9861-3E70-40EF-BA13-C301899D968D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BCD9861-3E70-40EF-BA13-C301899D968D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BCD9861-3E70-40EF-BA13-C301899D968D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

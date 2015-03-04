@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{107DA402-1E5D-48EE-BC05-EFD4BC3D4161}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Test.WCF.Common</RootNamespace>
+    <AssemblyName>Test.WCF.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Administration, Version=7.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\external\Web\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="MS.Test.Fiji, Version=1.0.0.0, Culture=neutral, PublicKeyToken=69c3241e6f0468ca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\external\Fiji\MS.Test.Fiji.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonSettings.cs" />
+    <Compile Include="LabUsersPasswordClient.cs" />
+    <Compile Include="TestDataAttribute.cs" />
+    <Compile Include="CrossMachineAttribute.cs" />
+    <Compile Include="CommonMachine.cs" />
+    <Compile Include="CommonWebApplication.cs" />
+    <Compile Include="CommonCommandLine.cs" />
+    <Compile Include="CommonEtwValidator.cs" />
+    <Compile Include="CommonServiceHost.cs" />
+    <Compile Include="CommonRemoteTask.cs" />
+    <Compile Include="CommonPath.cs" />
+    <Compile Include="CommonPartialTrust.cs" />
+    <Compile Include="CommonAppDomain.cs" />
+    <Compile Include="CommonLog.cs" />
+    <Compile Include="CommonCredential.cs" />
+    <Compile Include="CommonRemoteFactory.cs" />
+    <Compile Include="CommonChannel.cs" />
+    <Compile Include="CommonRemoteTrace.cs" />
+    <Compile Include="CommonRemote.cs" />
+    <Compile Include="CommonAppDomainFactory.cs" />
+    <Compile Include="CommonTest.cs" />
+    <Compile Include="CommonRemoteEtw.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TestDirectory\CommonCrossProcess.config" />
+    <None Include="TestDirectory\CommonCrossProcessStandardUser.config" />
+    <None Include="TestDirectory\CommonCrossMachine.config" />
+    <None Include="TestDirectory\CommonSettings.xml" />
+    <None Include="TestDirectory\TestCertificateAuthority.cer" />
+    <None Include="TestDirectory\TestCertificateAuthority.pvk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Test.WCF.FullTrust\Test.WCF.FullTrust.AdHoc.csproj">
+      <Project>{0bcd9861-3e70-40ef-ba13-c301899d968d}</Project>
+      <Name>Test.WCF.FullTrust</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

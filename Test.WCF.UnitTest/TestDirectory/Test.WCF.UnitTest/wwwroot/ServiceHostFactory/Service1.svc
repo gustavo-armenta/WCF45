@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Test.WCF.UnitTest.WCF.DuplexService" Factory="Test.WCF.UnitTest.WCF.WebHostFactory" %>

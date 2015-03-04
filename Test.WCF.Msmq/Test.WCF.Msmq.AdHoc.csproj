@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E602173C-7328-4838-91EA-89866CDC0074}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Test.WCF.Msmq</RootNamespace>
+    <AssemblyName>Test.WCF.Msmq</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="IClientListener.cs" />
+    <Compile Include="MsmqSanityTests.cs" />
+    <Compile Include="ServiceDeployer.cs" />
+    <Compile Include="TestDirectory\Test.WCF.Msmq\Services\BatchingService.cs" />
+    <Compile Include="TestDirectory\Test.WCF.Msmq\Services\HelloWorldService.cs" />
+    <Compile Include="TestDirectory\Test.WCF.Msmq\Services\IHelloWorld.cs" />
+    <Compile Include="TestDirectory\Test.WCF.Msmq\Services\IMsmqIntegrationService.cs" />
+    <Compile Include="TestDirectory\Test.WCF.Msmq\Services\MsmqIntegrationService.cs" />
+    <Compile Include="TestDirectory\Test.WCF.Msmq\Services\PoisonMessageService.cs" />
+    <Compile Include="TestDirectory\Test.WCF.Msmq\Services\PoisonRecoveryService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TestDirectory\Test.WCF.Msmq\wwwroot\EncryptAndSign\EncryptAndSign.svc" />
+    <Content Include="TestDirectory\Test.WCF.Msmq\wwwroot\HelloWorldServicePublic\HelloWorldServicePublic.svc" />
+    <Content Include="TestDirectory\Test.WCF.Msmq\wwwroot\HelloWorldService\HelloWorldService.svc" />
+    <Content Include="TestDirectory\Test.WCF.Msmq\wwwroot\MsmqIntegrationService\MsmqIntegrationService.svc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TestDirectory\Test.WCF.Msmq\wwwroot\EncryptAndSign\web.config" />
+    <None Include="TestDirectory\Test.WCF.Msmq\wwwroot\HelloWorldServicePublic\web.config" />
+    <None Include="TestDirectory\Test.WCF.Msmq\wwwroot\HelloWorldService\web.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TestDirectory\Test.WCF.Msmq\wwwroot\MsmqIntegrationService\web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Test.WCF.Common\Test.WCF.Common.AdHoc.csproj">
+      <Project>{107da402-1e5d-48ee-bc05-efd4bc3d4161}</Project>
+      <Name>Test.WCF.Common.AdHoc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Test.WCF.FullTrust\Test.WCF.FullTrust.AdHoc.csproj">
+      <Project>{0bcd9861-3e70-40ef-ba13-c301899d968d}</Project>
+      <Name>Test.WCF.FullTrust.AdHoc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{16B24F7F-33B1-4CA4-A801-FBE5EEB905D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Test.WCF.UnitTest</RootNamespace>
+    <AssemblyName>Test.WCF.UnitTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Administration, Version=7.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\external\Web\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="MS.Test.Fiji, Version=1.0.0.0, Culture=neutral, PublicKeyToken=69c3241e6f0468ca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\external\Fiji\MS.Test.Fiji.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constant.cs" />
+    <Compile Include="SvcUtilStreamServiceClient.cs" />
+    <Compile Include="SvcUtilRequestReplyServiceClient.cs" />
+    <Compile Include="SvcUtilAsyncServiceClient.cs" />
+    <Compile Include="CrossMachineWebHostTests.cs" />
+    <Compile Include="CrossProcessSelfHostTests.cs" />
+    <Compile Include="SampleCrossProcessClient.cs" />
+    <Compile Include="SampleClient.cs" />
+    <Compile Include="SampleServer.cs" />
+    <Compile Include="SampleServerCrossDomain.cs" />
+    <Compile Include="SvcUtilDuplexServiceClient.cs" />
+    <Compile Include="CrossProcessWebHostTests.cs" />
+    <Compile Include="CrossMachineSelfHostTests.cs" />
+    <Compile Include="CrossDomainTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SingleDomainTests.cs" />
+    <Compile Include="WCF\AsyncService.cs" />
+    <Compile Include="WCF\StreamService.cs" />
+    <Compile Include="WCF\IStreamService.cs" />
+    <Compile Include="WCF\IAsyncService.cs" />
+    <Compile Include="WCF\DuplexCallback.cs" />
+    <Compile Include="WCF\DuplexService.cs" />
+    <Compile Include="WCF\IDuplexCallback.cs" />
+    <Compile Include="WCF\IDuplexService.cs" />
+    <Compile Include="WCF\IRequestReplyService.cs" />
+    <Compile Include="WCF\NetHttpBindingHelper.cs" />
+    <Compile Include="WCF\NetHttpsBindingHelper.cs" />
+    <Compile Include="WCF\NetTcpBindingHelper.cs" />
+    <Compile Include="WCF\RequestReplyService.cs" />
+    <Compile Include="WCF\WebHostFactory.cs" />
+    <Compile Include="WCF\WSHttpBindingHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Test.WCF.Common\Test.WCF.Common.AdHoc.csproj">
+      <Project>{107da402-1e5d-48ee-bc05-efd4bc3d4161}</Project>
+      <Name>Test.WCF.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Test.WCF.FullTrust\Test.WCF.FullTrust.AdHoc.csproj">
+      <Project>{0bcd9861-3e70-40ef-ba13-c301899d968d}</Project>
+      <Name>Test.WCF.FullTrust</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TestDirectory\Test.WCF.UnitTest\SampleServer.config" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\SampleCrossProcessClient.config" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\svcutil\DuplexService\DuplexCallback.cs" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\CustomSite\web.config" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MessageWindows\web.config" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MessageCertificate\web.config" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MessageUserName\web.config" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWithMessageCredentialWindows\web.config" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportBasic\DuplexService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportBasic\web.config" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportDigest\DuplexService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportDigest\web.config" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportNtlm\DuplexService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportNtlm\web.config" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWindows\DuplexService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWindows\web.config" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportCertificate\DuplexService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportCertificate\web.config" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportNtlmExtendedProtection\web.config" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportNtlmExtendedProtection\DuplexService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWindowsExtendedProtection\web.config" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWindowsExtendedProtection\DuplexService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWithMessageCredentialCertificate\web.config" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWithMessageCredentialUserName\web.config" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MediumPartialTrust\web.config" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MediumPartialTrust\DuplexService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\ServiceHostFactory\Service1.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\ServiceHostFactory\web.config" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\Default\DuplexService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\Default\web.config" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportBasic\RequestReplyService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportCertificate\RequestReplyService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportDigest\RequestReplyService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWindows\RequestReplyService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWindowsExtendedProtection\RequestReplyService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportNtlm\RequestReplyService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportNtlmExtendedProtection\RequestReplyService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MediumPartialTrust\RequestReplyService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\Default\RequestReplyService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportBasic\AsyncService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportCertificate\AsyncService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportDigest\AsyncService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWindows\AsyncService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWindowsExtendedProtection\AsyncService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportNtlm\AsyncService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportNtlmExtendedProtection\AsyncService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MediumPartialTrust\AsyncService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\Default\AsyncService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportBasic\StreamService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportCertificate\StreamService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportDigest\StreamService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWindows\StreamService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWindowsExtendedProtection\StreamService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportNtlm\StreamService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportNtlmExtendedProtection\StreamService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MediumPartialTrust\StreamService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\Default\StreamService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWithMessageCredentialUserName\AsyncService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWithMessageCredentialUserName\DuplexService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWithMessageCredentialUserName\RequestReplyService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWithMessageCredentialUserName\StreamService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWithMessageCredentialCertificate\AsyncService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWithMessageCredentialCertificate\DuplexService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWithMessageCredentialCertificate\RequestReplyService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWithMessageCredentialCertificate\StreamService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWithMessageCredentialWindows\AsyncService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWithMessageCredentialWindows\DuplexService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWithMessageCredentialWindows\RequestReplyService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\TransportWithMessageCredentialWindows\StreamService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MessageUserName\AsyncService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MessageUserName\DuplexService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MessageUserName\RequestReplyService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MessageUserName\StreamService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MessageCertificate\AsyncService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MessageCertificate\DuplexService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MessageCertificate\RequestReplyService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MessageCertificate\StreamService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MessageWindows\AsyncService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MessageWindows\DuplexService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MessageWindows\RequestReplyService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\MessageWindows\StreamService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\CustomSite\AsyncService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\CustomSite\DuplexService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\CustomSite\RequestReplyService.svc" />
+    <None Include="TestDirectory\Test.WCF.UnitTest\wwwroot\CustomSite\StreamService.svc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TestDirectory\Test.WCF.UnitTest\svcutil\AsyncService\" />
+    <Folder Include="TestDirectory\Test.WCF.UnitTest\svcutil\RequestReplyService\" />
+    <Folder Include="TestDirectory\Test.WCF.UnitTest\svcutil\StreamService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

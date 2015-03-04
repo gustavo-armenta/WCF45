@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(_NTDRIVE)$(_NTROOT)\tools\Microsoft.DevDiv.Native.Settings.targets" />
+  <ItemGroup>
+    <ProjectFile Include="Test.WCF.FullTrust\Test.WCF.FullTrust.csproj"/>
+    <ProjectFile Include="Test.WCF.Common\Test.WCF.Common.csproj"/> 
+    <ProjectFile Include="Test.WCF.UnitTest\Test.WCF.UnitTest.csproj"/> 
+    <ProjectFile Include="Test.WCF.Msmq\Test.WCF.Msmq.csproj"/> 
+    <ProjectFile Include="Test.WCF451\Test.WCF451.csproj"/> 
+  </ItemGroup>
+  <Import Project="$(_NTDRIVE)$(_NTROOT)\tools\Microsoft.DevDiv.Traversal.targets" />
+</Project>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <StartupObject />
+    <SccProjectName />
+    <SccLocalPath />
+    <SccAuxPath />
+    <SccProvider />
+  </PropertyGroup>
+  <Import Project="$(_NTDRIVE)$(_NTROOT)\ndp\cdf\Microsoft.CDF.Test40.Settings.targets" />
+  <PropertyGroup>
+    <AssemblyName>Test.WCF.Msmq</AssemblyName>
+    <OutputType>Library</OutputType>
+    <BuildNoSymchk>true</BuildNoSymchk>
+    <RootNamespace>$(AssemblyName)</RootNamespace>
+    <ProjectGuid>{E602173C-7328-4838-91EA-89866CDC0074}</ProjectGuid>
+    <OutputPath>$(BinariesDirectory)\CDF\Test\WCF45x\</OutputPath>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(CdfRootPath)\test\WCF45x\Test.WCF.FullTrust\Test.WCF.FullTrust.csproj"/>
+    <ProjectReference Include="$(CdfRootPath)\test\WCF45x\Test.WCF.Common\Test.WCF.Common.csproj"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="IClientListener.cs" />
+    <Compile Include="MsmqSanityTests.cs" />
+    <Compile Include="ServiceDeployer.cs" />
+    <Compile Include="TestDirectory\Test.WCF.Msmq\Services\BatchingService.cs" />
+    <Compile Include="TestDirectory\Test.WCF.Msmq\Services\HelloWorldService.cs" />
+    <Compile Include="TestDirectory\Test.WCF.Msmq\Services\IHelloWorld.cs" />
+    <Compile Include="TestDirectory\Test.WCF.Msmq\Services\IMsmqIntegrationService.cs" />
+    <Compile Include="TestDirectory\Test.WCF.Msmq\Services\MsmqIntegrationService.cs" />
+    <Compile Include="TestDirectory\Test.WCF.Msmq\Services\PoisonMessageService.cs" />
+    <Compile Include="TestDirectory\Test.WCF.Msmq\Services\PoisonRecoveryService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TestDirectory\Test.WCF.Msmq\wwwroot\EncryptAndSign\EncryptAndSign.svc" />
+    <Content Include="TestDirectory\Test.WCF.Msmq\wwwroot\HelloWorldServicePublic\HelloWorldServicePublic.svc" />
+    <Content Include="TestDirectory\Test.WCF.Msmq\wwwroot\HelloWorldService\HelloWorldService.svc" />
+    <Content Include="TestDirectory\Test.WCF.Msmq\wwwroot\MsmqIntegrationService\MsmqIntegrationService.svc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TestDirectory\Test.WCF.Msmq\wwwroot\EncryptAndSign\web.config" />
+    <None Include="TestDirectory\Test.WCF.Msmq\wwwroot\HelloWorldServicePublic\web.config" />
+    <None Include="TestDirectory\Test.WCF.Msmq\wwwroot\HelloWorldService\web.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TestDirectory\Test.WCF.Msmq\wwwroot\MsmqIntegrationService\web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <DataFile Include="..\Test.WCF.Msmq.testsettings" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFile Include="TestDirectory\**">
+      <DestFolder>$(OutputPath)\Test.WCF.Msmq\TestDirectory\</DestFolder>
+    </CopyFile>
+  </ItemGroup>
+  <Import Project="$(_NTDRIVE)$(_NTROOT)\ndp\cdf\Microsoft.CDF.Test40.targets" />
+</Project>

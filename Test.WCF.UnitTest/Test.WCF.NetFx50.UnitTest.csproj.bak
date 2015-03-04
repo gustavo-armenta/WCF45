@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{16B24F7F-33B1-4CA4-A801-FBE5EEB905D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Test.WCF.NetFx50.UnitTest</RootNamespace>
+    <AssemblyName>Test.WCF.NetFx50.UnitTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Administration, Version=7.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\external\Web\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="MS.Test.Fiji, Version=1.0.0.0, Culture=neutral, PublicKeyToken=69c3241e6f0468ca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\external\Fiji\MS.Test.Fiji.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constant.cs" />
+    <Compile Include="WCF\NetHttpsBindingHelper.cs" />
+    <Compile Include="WebHostAuthentication.cs" />
+    <Compile Include="SampleClient.cs" />
+    <Compile Include="SampleServer.cs" />
+    <Compile Include="CrossDomainNetTcpPartialTrust.cs" />
+    <Compile Include="NetTcpPartialTrustTest.cs" />
+    <Compile Include="CrossDomainCode.cs" />
+    <Compile Include="SvcUtilDuplexServiceClient.cs" />
+    <Compile Include="WCF\NetTcpBindingHelper.cs" />
+    <Compile Include="WCF\NetHttpBindingHelper.cs" />
+    <Compile Include="CrossProcess.cs" />
+    <Compile Include="CrossMachine.cs" />
+    <Compile Include="CrossDomain.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WCF\DuplexCallback.cs" />
+    <Compile Include="WCF\DuplexService.cs" />
+    <Compile Include="WCF\IDuplexCallback.cs" />
+    <Compile Include="WCF\IDuplexService.cs" />
+    <Compile Include="WCF\RequestReplyService.cs" />
+    <Compile Include="WCF\IRequestReplyService.cs" />
+    <Compile Include="SingleDomain.cs" />
+    <Compile Include="WCF\WebHostFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Test.WCF.NetFx50.Common\Test.WCF.NetFx50.Common.csproj">
+      <Project>{107da402-1e5d-48ee-bc05-efd4bc3d4161}</Project>
+      <Name>Test.WCF.NetFx50.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Test.WCF.NetFx50.FullTrust\Test.WCF.NetFx50.FullTrust.csproj">
+      <Project>{0bcd9861-3e70-40ef-ba13-c301899d968d}</Project>
+      <Name>Test.WCF.NetFx50.FullTrust</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TestDirectory\Test.WCF.NetFx50.UnitTest\svcutil\DuplexService\DuplexCallback.cs" />
+    <None Include="TestDirectory\Test.WCF.NetFx50.UnitTest\wwwroot\AuthenticationBasic\Service1.svc" />
+    <None Include="TestDirectory\Test.WCF.NetFx50.UnitTest\wwwroot\AuthenticationBasic\web.config" />
+    <None Include="TestDirectory\Test.WCF.NetFx50.UnitTest\wwwroot\AuthenticationDigest\Service1.svc" />
+    <None Include="TestDirectory\Test.WCF.NetFx50.UnitTest\wwwroot\AuthenticationDigest\web.config" />
+    <None Include="TestDirectory\Test.WCF.NetFx50.UnitTest\wwwroot\AuthenticationWindows\Service1.svc" />
+    <None Include="TestDirectory\Test.WCF.NetFx50.UnitTest\wwwroot\AuthenticationWindows\web.config" />
+    <None Include="TestDirectory\Test.WCF.NetFx50.UnitTest\wwwroot\NetTcp\Service1.svc" />
+    <None Include="TestDirectory\Test.WCF.NetFx50.UnitTest\wwwroot\NetTcp\web.config" />
+    <None Include="TestDirectory\Test.WCF.NetFx50.UnitTest\wwwroot\NetTcpFactory\Service1.svc" />
+    <None Include="TestDirectory\Test.WCF.NetFx50.UnitTest\wwwroot\NetTcpFactory\web.config" />
+    <None Include="TestDirectory\Test.WCF.NetFx50.UnitTest\wwwroot\WebHost\Service1.svc" />
+    <None Include="TestDirectory\Test.WCF.NetFx50.UnitTest\wwwroot\WebHost\web.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

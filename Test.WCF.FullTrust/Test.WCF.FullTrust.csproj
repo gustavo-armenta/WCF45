@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(_NTDRIVE)$(_NTROOT)\ndp\cdf\Microsoft.CDF.Test40.Settings.targets" />
+  <PropertyGroup>
+    <AssemblyName>Test.WCF.FullTrust</AssemblyName>
+    <OutputType>library</OutputType>
+    <BuildNoSymchk>true</BuildNoSymchk>
+    <RootNamespace>$(AssemblyName)</RootNamespace>
+    <ProjectGuid>{0BCD9861-3E70-40EF-BA13-C301899D968D}</ProjectGuid>
+    <OutputPath>$(BinariesDirectory)\CDF\Test\WCF45x\</OutputPath>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Test.WCF.FullTrust.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FullTrustDns.cs" />
+    <Compile Include="FullTrustEnvironment.cs" />
+    <Compile Include="FullTrustDebug.cs" />
+    <Compile Include="FullTrustAssert.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Test.WCF.FullTrust.snk" />
+  </ItemGroup>
+  <Import Project="$(_NTDRIVE)$(_NTROOT)\ndp\cdf\Microsoft.CDF.Test40.targets" />
+</Project>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <StartupObject />
+    <SccProjectName />
+    <SccLocalPath />
+    <SccAuxPath />
+    <SccProvider />
+  </PropertyGroup>
+  <Import Project="$(_NTDRIVE)$(_NTROOT)\ndp\cdf\Microsoft.CDF.Test40.Settings.targets" />
+  <PropertyGroup>
+    <AssemblyName>Test.WCF451</AssemblyName>
+    <OutputType>Library</OutputType>
+    <BuildNoSymchk>true</BuildNoSymchk>
+    <RootNamespace>$(AssemblyName)</RootNamespace>
+    <ProjectGuid>{E602173C-7328-4838-91EA-89866CDC0074}</ProjectGuid>
+    <OutputPath>$(BinariesDirectory)\CDF\Test\WCF45x\</OutputPath>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(CdfRootPath)\test\WCF45x\Test.WCF.FullTrust\Test.WCF.FullTrust.csproj"/>
+    <ProjectReference Include="$(CdfRootPath)\test\WCF45x\Test.WCF.Common\Test.WCF.Common.csproj"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="UnitTest1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <DataFile Include="..\Test.WCF451.testsettings" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFile Include="TestDirectory\**">
+      <DestFolder>$(OutputPath)\Test.WCF451\TestDirectory\</DestFolder>
+    </CopyFile>
+  </ItemGroup>
+  <Import Project="$(_NTDRIVE)$(_NTROOT)\ndp\cdf\Microsoft.CDF.Test40.targets" />
+</Project>

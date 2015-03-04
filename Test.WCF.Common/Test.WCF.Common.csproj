@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <StartupObject />
+    <SccProjectName />
+    <SccLocalPath />
+    <SccAuxPath />
+    <SccProvider />
+  </PropertyGroup>
+  <Import Project="$(_NTDRIVE)$(_NTROOT)\ndp\cdf\Microsoft.CDF.Test40.Settings.targets" />
+  <PropertyGroup>
+    <AssemblyName>Test.WCF.Common</AssemblyName>
+    <OutputType>Library</OutputType>
+    <BuildNoSymchk>true</BuildNoSymchk>
+    <RootNamespace>$(AssemblyName)</RootNamespace>
+    <ProjectGuid>{107DA402-1E5D-48EE-BC05-EFD4BC3D4161}</ProjectGuid>
+    <OutputPath>$(BinariesDirectory)\CDF\Test\WCF45x\</OutputPath>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(CdfRootPath)\test\WCF45x\Test.WCF.FullTrust\Test.WCF.FullTrust.csproj"/>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="MS.Test.Fiji, Version=1.0.0.0, Culture=neutral, PublicKeyToken=69c3241e6f0468ca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\external\Fiji\MS.Test.Fiji.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Administration, Version=7.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\external\Web\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonSettings.cs" />
+    <Compile Include="LabUsersPasswordClient.cs" />
+    <Compile Include="TestDataAttribute.cs" />
+    <Compile Include="CrossMachineAttribute.cs" />
+    <Compile Include="CommonMachine.cs" />
+    <Compile Include="CommonWebApplication.cs" />
+    <Compile Include="CommonCommandLine.cs" />
+    <Compile Include="CommonEtwValidator.cs" />
+    <Compile Include="CommonServiceHost.cs" />
+    <Compile Include="CommonRemoteTask.cs" />
+    <Compile Include="CommonPath.cs" />
+    <Compile Include="CommonPartialTrust.cs" />
+    <Compile Include="CommonAppDomain.cs" />
+    <Compile Include="CommonLog.cs" />
+    <Compile Include="CommonCredential.cs" />
+    <Compile Include="CommonRemoteFactory.cs" />
+    <Compile Include="CommonChannel.cs" />
+    <Compile Include="CommonRemoteTrace.cs" />
+    <Compile Include="CommonRemote.cs" />
+    <Compile Include="CommonAppDomainFactory.cs" />
+    <Compile Include="CommonTest.cs" />
+    <Compile Include="CommonRemoteEtw.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TestDirectory\CommonCrossProcess.config" />
+    <None Include="TestDirectory\CommonCrossProcessStandardUser.config" />
+    <None Include="TestDirectory\CommonCrossMachine.config" />
+    <None Include="TestDirectory\CommonSettings.xml" />
+    <None Include="TestDirectory\TestCertificateAuthority.cer" />
+    <None Include="TestDirectory\TestCertificateAuthority.pvk" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFile Include="TestDirectory\**">
+      <DestFolder>$(OutputPath)\Test.WCF.Common\TestDirectory\</DestFolder>
+    </CopyFile>
+  </ItemGroup>
+  <Import Project="$(_NTDRIVE)$(_NTROOT)\ndp\cdf\Microsoft.CDF.Test40.targets" />
+</Project>

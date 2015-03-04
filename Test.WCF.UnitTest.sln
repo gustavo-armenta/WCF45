@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.WCF.UnitTest", "Test.WCF.UnitTest\Test.WCF.UnitTest.AdHoc.csproj", "{16B24F7F-33B1-4CA4-A801-FBE5EEB905D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EBDC0885-EAD8-4C68-A1F5-FCB4DF95792A}"
+	ProjectSection(SolutionItems) = preProject
+		MadDog_Runtime.testsettings = MadDog_Runtime.testsettings
+		Test.WCF.UnitTest.testsettings = Test.WCF.UnitTest.testsettings
+		Test.WCF.UnitTest.vsmdi = Test.WCF.vsmdi
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.WCF.FullTrust", "Test.WCF.FullTrust\Test.WCF.FullTrust.AdHoc.csproj", "{0BCD9861-3E70-40EF-BA13-C301899D968D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.WCF.Common", "Test.WCF.Common\Test.WCF.Common.AdHoc.csproj", "{107DA402-1E5D-48EE-BC05-EFD4BC3D4161}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://vstfdevdiv:8080/devdiv2
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Test.WCF.FullTrust\\Test.WCF.FullTrust.AdHoc.csproj
+		SccProjectName1 = Test.WCF.FullTrust
+		SccLocalPath1 = Test.WCF.FullTrust
+		SccProjectUniqueName2 = Test.WCF.Common\\Test.WCF.Common.AdHoc.csproj
+		SccProjectName2 = Test.WCF.Common
+		SccLocalPath2 = Test.WCF.Common
+		SccProjectUniqueName3 = Test.WCF.UnitTest\\Test.WCF.UnitTest.AdHoc.csproj
+		SccProjectName3 = Test.WCF.UnitTest
+		SccLocalPath3 = Test.WCF.UnitTest
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Test.WCF.UnitTest.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16B24F7F-33B1-4CA4-A801-FBE5EEB905D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16B24F7F-33B1-4CA4-A801-FBE5EEB905D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16B24F7F-33B1-4CA4-A801-FBE5EEB905D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16B24F7F-33B1-4CA4-A801-FBE5EEB905D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BCD9861-3E70-40EF-BA13-C301899D968D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BCD9861-3E70-40EF-BA13-C301899D968D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BCD9861-3E70-40EF-BA13-C301899D968D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BCD9861-3E70-40EF-BA13-C301899D968D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{107DA402-1E5D-48EE-BC05-EFD4BC3D4161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{107DA402-1E5D-48EE-BC05-EFD4BC3D4161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{107DA402-1E5D-48EE-BC05-EFD4BC3D4161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{107DA402-1E5D-48EE-BC05-EFD4BC3D4161}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
